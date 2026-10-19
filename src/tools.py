@@ -67,7 +67,7 @@ class ToolRegistry:
                         "status": meta.get("status", ""),
                         "authority": meta.get("authority", ""),
                         "section": passage.section,
-                        "excerpt": passage.content[:240] + ("..." if len(passage.content) > 240 else ""),
+                        "excerpt": passage.content[:600] + ("..." if len(passage.content) > 600 else ""),
                         "score": round(final_score, 2),
                     }
                 )

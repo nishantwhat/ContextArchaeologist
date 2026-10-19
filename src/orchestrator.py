@@ -300,15 +300,22 @@ class ContextArchaeologistOrchestrator:
                 "3. **Conclusion:** Possibility phrasing in a status digest does not supersede an authoritative council decision."
             )
 
-        # Default multi-document synthesis
+        # Default multi-document synthesis for unseen questions
         if needs_abstention:
             return f"**Insufficient Evidence Notice:**\n{abstention_reason}\n\n*Supporting documents analyzed:* " + ", ".join(f"[{p['passage_id']}]({p['filename']})" for p in retrieved_passages[:4])
 
+        # Dynamic evidence extraction from top retrieved passages
+        evidence_points_text = []
+        for p in retrieved_passages[:4]:
+            excerpt_clean = p['excerpt'].strip().replace("\n", " ")
+            evidence_points_text.append(f"- **[{p['passage_id']}] {p.get('title', p['document_id'])}:** {excerpt_clean}")
+
+        evidence_block = "\n".join(evidence_points_text)
+
         return (
-            f"**Context Archaeology Investigation Summary:**\n\n"
-            f"Based on the analysis of {len(retrieved_passages)} retrieved passages across the corporate archive:\n"
-            f"- **Current Date Status:** No launch date is currently authorized under governing decision DOC-008.\n"
-            f"- **Gate Status:** 4 mandatory gates remain incomplete or conditional (Product conditional in DOC-009, recovery run record missing in DOC-004/DOC-010, Security waiting in DOC-006/DOC-011, Customer Ops unfrozen in DOC-005).\n"
-            f"- **Contradictions Reconciled:** {len(contradictions)} conflicting records resolved via temporal precedence and formal authority.\n\n"
-            f"Key citations: " + ", ".join(f"[{p['passage_id']}]({p['filename']})" for p in retrieved_passages[:5])
+            f"**Context Archaeology Investigation Findings:**\n\n"
+            f"Based on analysis of {len(retrieved_passages)} retrieved passages across the corporate archive:\n\n"
+            f"{evidence_block}\n\n"
+            f"**Conclusion:** The archive evidence directly addresses the inquiry across the cited records above. "
+            f"Citations: " + ", ".join(f"[{p['passage_id']}]({p['filename']})" for p in retrieved_passages[:5])
         )

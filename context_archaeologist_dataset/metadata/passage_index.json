@@ -497,6 +497,41 @@
       "passage_id": "DOC-012-P05",
       "section": "Body",
       "expected_excerpt": "I have not received a final Product acceptance, a complete recovery run record, Security production approval, or confirmation that the FAQ is approved for external distribution and the rota is frozen. The next useful ste"
+    },
+    "DOC-013-P01": {
+      "document_id": "DOC-013",
+      "filename": "DOC-013_risk_advisory.md",
+      "passage_id": "DOC-013-P01",
+      "section": "Title",
+      "expected_excerpt": "# Northstar Phase 2 Expansion — Operational Risk Addendum"
+    },
+    "DOC-013-P02": {
+      "document_id": "DOC-013",
+      "filename": "DOC-013_risk_advisory.md",
+      "passage_id": "DOC-013-P02",
+      "section": "Metadata",
+      "expected_excerpt": "**Document ID:** DOC-013 **Created:** 2026-04-12 · **Version:** 1.0 **Author:** Marcus Vance, Chief Risk Officer **Status:** Authoritative Risk Advisory"
+    },
+    "DOC-013-P03": {
+      "document_id": "DOC-013",
+      "filename": "DOC-013_risk_advisory.md",
+      "passage_id": "DOC-013-P03",
+      "section": "Executive Summary",
+      "expected_excerpt": "## Executive Summary This advisory addresses questions from the Board Audit Committee regarding whether Northstar may proceed under a provisional or \"soft\" launch before the four mandatory gates in DOC-008 are satisfied."
+    },
+    "DOC-013-P04": {
+      "document_id": "DOC-013",
+      "filename": "DOC-013_risk_advisory.md",
+      "passage_id": "DOC-013-P04",
+      "section": "Risk Determination",
+      "expected_excerpt": "## Risk Determination 1. Under no circumstances may a customer cohort be provisioned or granted production access without all four gates passing. 2. A proposal was circulated in an informal email thread suggesting that \"the Customer Operations FAQ gate could be waived if Support operates with live white-glove chat.\" Risk Engineering has formally rejected this proposal. No gate waivers are permitted. 3. Asterion Works' cybersecurity insurance underwriter has explicitly confirmed that production data residency compliance is conditioned upon the final access-control export referenced in DOC-011."
+    },
+    "DOC-013-P05": {
+      "document_id": "DOC-013",
+      "filename": "DOC-013_risk_advisory.md",
+      "passage_id": "DOC-013-P05",
+      "section": "Related Documents",
+      "expected_excerpt": "## Related Documents See DOC-008 for governing launch gate policy and DOC-011 for outstanding security evidence."
     }
   }
 }

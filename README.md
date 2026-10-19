@@ -3,7 +3,9 @@
 An autonomous **Agentic AI system** that investigates corporate workplace archives to reconstruct decision histories, uncover stale records and contradictions, trace cross-document dependencies, validate citations, and honestly report unresolved questions.
 
 Unlike standard chatbots or generic RAG systems that blindly retrieve isolated chunks and guess answers, **Context Archaeologist** exhibits genuine agentic behavior:
-- **Autonomous Multi-Stage Pipeline:** Plans searches, executes targeted tool calls, and performs conditional follow-up queries when evidence is incomplete or references superseded decisions.
+- **LangGraph Stateful Agent:** Iterative investigation graph (`Planner -> Tool Execution -> Intermediate Evaluator -> Conditional Routing -> Synthesis`).
+- **Autonomous Tool Selection:** The agent dynamically decides whether to search, inspect document metadata, traverse cross-document references, or inspect timelines.
+- **Local LLM Backend:** Native integration with local **Ollama** running `llama3:latest` (8.0B parameters) with factual temperature and JSON schema generation.
 - **Temporal & Authority Reasoner:** Reconciles formal decisions against informal chat claims, distinguishing between drafts, baseline plans, and binding Launch Council decisions.
 - **Epistemic Humility & Abstention:** Detects missing artifacts (e.g. absent recovery run records) and abstains rather than hallucinating dates or pass/fail outcomes.
 - **100% Citation Grounding:** Verifies cited passages against the public document manifest to eliminate hallucinated references.
@@ -20,11 +22,16 @@ Launch the web interface:
 python -m streamlit run app.py
 ```
 Open your browser at `http://localhost:8501`.
+- Use the sidebar toggle to switch between **⚡ Fast Grounded Pipeline** and **🔄 LangGraph Stateful Loop**.
 
 ### 2. Run the Evaluation Suite
-Verify all 10 evaluation scenarios:
+Verify both the original 10 evaluation scenarios and the new unseen robustness test suite:
 ```powershell
+# Run original 10 scenarios
 python -m pytest tests/test_scenarios.py -v
+
+# Run Phase 4 unseen robustness scenarios
+python -m pytest tests/test_robustness_unseen.py -v
 ```
 
 ---
@@ -55,24 +62,34 @@ python -m pytest tests/test_scenarios.py -v
   3. The agent detects that although an informal chat (`DOC-010`) mentioned a restore that *"looked much faster"*, the final elapsed-time figure and integrity run record are missing from the archive (`DOC-004`, `DOC-011`).
   4. The agent explicitly abstains from declaring pass or fail, demonstrating honest epistemic bounds.
 
+### Scenario D: Unseen Robustness & Gate Waiver Rejection (Phase 4)
+- **Question:** *"Can the Customer Operations FAQ gate be waived if Support uses live white-glove chat?"*
+- **What to look for in the UI:**
+  1. Select **Custom User Query...** and paste the question.
+  2. The agent retrieves new record `DOC-013` (Operational Risk Addendum).
+  3. The agent identifies that Chief Risk Officer Marcus Vance formally evaluated and rejected the informal waiver proposal, citing that no gate waivers are permitted under Asterion Works' compliance rules.
+
 ---
 
 ## 🏗️ Architecture & Modules
 
 ```
 ContextArchaeologist/
-├── app.py                                # Modern Streamlit Interactive Workbench
-├── progress.md                           # Progress log and milestone audit report
+├── app.py                                # Streamlit UI with LangGraph engine toggle
+├── progress.md                           # Comprehensive progress and audit log
 ├── README.md                             # Documentation & 5-minute demo guide
 ├── src/
 │   ├── ingestion.py                      # Clean document & passage ingestion engine
 │   ├── tools.py                          # Real Python tools (search, traverse, validate)
 │   ├── reasoner.py                       # Temporal & authority contradiction engine
-│   └── orchestrator.py                   # Multi-stage agent orchestrator
+│   ├── llm_client.py                     # Local Ollama client (llama3:latest integration)
+│   ├── langgraph_agent.py                # Stateful LangGraph investigation loop
+│   └── orchestrator.py                   # Grounded multi-stage orchestrator
 ├── tests/
-│   └── test_scenarios.py                 # Automated pytest suite (10/10 scenarios)
-└── context_archaeologist_dataset/        # Audited Northstar synthetic corporate archive
-    ├── documents/                        # 12 workplace Markdown/TXT records
+│   ├── test_scenarios.py                 # Original 10 evaluation scenarios (10/10 PASS)
+│   └── test_robustness_unseen.py         # Phase 4 unseen robustness scenarios (4/4 PASS)
+└── context_archaeologist_dataset/        # Northstar corporate archive
+    ├── documents/                        # 13 workplace Markdown/TXT records (incl. DOC-013)
     ├── metadata/                         # Manifest, passage indices, claim graphs
     ├── evaluation/                       # 10 ground truth evaluation scenarios
     └── scripts/                          # Dataset validation script
