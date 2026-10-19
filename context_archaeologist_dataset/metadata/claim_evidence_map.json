@@ -1,0 +1,244 @@
+{
+  "schema_version": "1.0",
+  "claims": [
+    {
+      "claim_id": "CL-001",
+      "normalized_claim": "The January target was 20 April 2026, and it was a planning target rather than a commitment.",
+      "category": "schedule_history",
+      "entity": "Northstar limited-cohort launch",
+      "supporting_document_ids": [
+        "DOC-001",
+        "DOC-002"
+      ],
+      "supporting_passage_ids": [
+        "DOC-001-P04",
+        "DOC-002-P03"
+      ],
+      "contradicting_document_ids": [],
+      "authority_temporal_notes": "January charter and kickoff establish baseline intent; later decisions supersede the target.",
+      "status": "established_historical",
+      "expected_conclusion": "20 April was the original planning target, not a committed launch date.",
+      "evidence_needed": "Charter baseline and kickoff context."
+    },
+    {
+      "claim_id": "CL-002",
+      "normalized_claim": "On 18 February, the target moved from 20 April to 11 May, subject to unchanged gates.",
+      "category": "decision",
+      "entity": "Schedule decision",
+      "supporting_document_ids": [
+        "DOC-003"
+      ],
+      "supporting_passage_ids": [
+        "DOC-003-P03",
+        "DOC-003-P05"
+      ],
+      "contradicting_document_ids": [],
+      "authority_temporal_notes": "Valid historical decision, explicitly superseded on 2 April.",
+      "status": "superseded",
+      "expected_conclusion": "The February decision moved the target to 11 May, but it no longer governs current date status.",
+      "evidence_needed": "February decision plus later superseding decision."
+    },
+    {
+      "claim_id": "CL-003",
+      "normalized_claim": "As of the archive's latest records, no launch date is authorized; the date is to be confirmed after all gates pass.",
+      "category": "current_status",
+      "entity": "Northstar limited-cohort launch",
+      "supporting_document_ids": [
+        "DOC-008",
+        "DOC-012"
+      ],
+      "supporting_passage_ids": [
+        "DOC-008-P03",
+        "DOC-008-P08",
+        "DOC-012-P04"
+      ],
+      "contradicting_document_ids": [
+        "DOC-003",
+        "DOC-007"
+      ],
+      "authority_temporal_notes": "DOC-008 is the authoritative Launch Council decision; DOC-003 is superseded and DOC-007 is an unapproved draft.",
+      "status": "established_current",
+      "expected_conclusion": "There is no currently authorized launch date.",
+      "evidence_needed": "Current decision, stale date record, and draft calendar status."
+    },
+    {
+      "claim_id": "CL-004",
+      "normalized_claim": "The recovery gate has not been demonstrated as passed in the available archive.",
+      "category": "dependency_status",
+      "entity": "Recovery rehearsal",
+      "supporting_document_ids": [
+        "DOC-004",
+        "DOC-010",
+        "DOC-011",
+        "DOC-012"
+      ],
+      "supporting_passage_ids": [
+        "DOC-004-P04",
+        "DOC-010-P03",
+        "DOC-011-P04",
+        "DOC-012-P04"
+      ],
+      "contradicting_document_ids": [],
+      "authority_temporal_notes": "March run failed timing objective; April chat reports an attempt but no final evidence.",
+      "status": "established_not_passed_in_evidence",
+      "expected_conclusion": "The archive does not contain evidence of a passing recovery gate.",
+      "evidence_needed": "Engineering update and April thread's explicit missing-result statement."
+    },
+    {
+      "claim_id": "CL-005",
+      "normalized_claim": "Security has not issued production approval in the available review record.",
+      "category": "approval_status",
+      "entity": "Production configuration",
+      "supporting_document_ids": [
+        "DOC-006",
+        "DOC-011",
+        "DOC-012"
+      ],
+      "supporting_passage_ids": [
+        "DOC-006-P05",
+        "DOC-011-P04",
+        "DOC-012-P04"
+      ],
+      "contradicting_document_ids": [
+        "DOC-007"
+      ],
+      "authority_temporal_notes": "DOC-007's 30 March sign-off is a draft placeholder and not approval evidence.",
+      "status": "established_current",
+      "expected_conclusion": "Production Security approval is not recorded.",
+      "evidence_needed": "Security thread and outstanding evidence request; classify calendar line as placeholder."
+    },
+    {
+      "claim_id": "CL-006",
+      "normalized_claim": "The release-candidate acceptance gate remains conditional because duplicate-notification retest evidence is absent.",
+      "category": "approval_status",
+      "entity": "Product acceptance",
+      "supporting_document_ids": [
+        "DOC-009",
+        "DOC-012"
+      ],
+      "supporting_passage_ids": [
+        "DOC-009-P03",
+        "DOC-012-P04"
+      ],
+      "contradicting_document_ids": [],
+      "authority_temporal_notes": "Product walkthrough completion is not formal acceptance.",
+      "status": "established_incomplete",
+      "expected_conclusion": "Product acceptance is not yet unconditional in the archive.",
+      "evidence_needed": "Conditional review note and status digest."
+    },
+    {
+      "claim_id": "CL-007",
+      "normalized_claim": "The final production access-control export has not been received by Security in the review record; its existence elsewhere is unknown.",
+      "category": "missing_evidence",
+      "entity": "Access-control export",
+      "supporting_document_ids": [
+        "DOC-006",
+        "DOC-011"
+      ],
+      "supporting_passage_ids": [
+        "DOC-006-P03",
+        "DOC-011-P03"
+      ],
+      "contradicting_document_ids": [],
+      "authority_temporal_notes": "Evidence of non-receipt in the review record is not proof that no export exists anywhere.",
+      "status": "established_missing_from_archive",
+      "expected_conclusion": "Security has not received the export in the reviewed archive; broader existence cannot be concluded.",
+      "evidence_needed": "Explicit request and review thread."
+    },
+    {
+      "claim_id": "CL-008",
+      "normalized_claim": "Customer Operations has drafts, but the rota is not frozen and the FAQ is not approved for external distribution in the available records.",
+      "category": "readiness",
+      "entity": "Customer Operations",
+      "supporting_document_ids": [
+        "DOC-005",
+        "DOC-008",
+        "DOC-012"
+      ],
+      "supporting_passage_ids": [
+        "DOC-005-P03",
+        "DOC-008-P05",
+        "DOC-012-P04"
+      ],
+      "contradicting_document_ids": [],
+      "authority_temporal_notes": "Informal phrase 'Support is ready' is scoped to draft preparation only.",
+      "status": "established_incomplete",
+      "expected_conclusion": "Customer Operations gate is not evidenced as complete.",
+      "evidence_needed": "Readiness notes and formal gate list."
+    },
+    {
+      "claim_id": "CL-009",
+      "normalized_claim": "Whether the second recovery rehearsal passed its timing and data-integrity checks is unresolved in the archive.",
+      "category": "unresolved_fact",
+      "entity": "7 April recovery rehearsal",
+      "supporting_document_ids": [
+        "DOC-010",
+        "DOC-011"
+      ],
+      "supporting_passage_ids": [
+        "DOC-010-P02",
+        "DOC-010-P03",
+        "DOC-011-P03"
+      ],
+      "contradicting_document_ids": [],
+      "authority_temporal_notes": "Attempt is reported, but final run record and results are absent; do not infer pass or fail.",
+      "status": "unresolved",
+      "expected_conclusion": "The outcome of the second rehearsal cannot be determined from available evidence.",
+      "evidence_needed": "A final run record that is not present in the archive."
+    },
+    {
+      "claim_id": "CL-010",
+      "normalized_claim": "The specific date Launch Council will eventually authorize is unknown from the archive.",
+      "category": "insufficient_evidence",
+      "entity": "Future launch date",
+      "supporting_document_ids": [
+        "DOC-008",
+        "DOC-012"
+      ],
+      "supporting_passage_ids": [
+        "DOC-008-P08",
+        "DOC-012-P04"
+      ],
+      "contradicting_document_ids": [
+        "DOC-003",
+        "DOC-007"
+      ],
+      "authority_temporal_notes": "The governing decision explicitly withholds a date pending gates; no subsequent authorization is present.",
+      "status": "unresolved",
+      "expected_conclusion": "No specific future date can be stated; the current status is to be confirmed.",
+      "evidence_needed": "A later Launch Council authorization after gate evidence is assembled."
+    }
+  ],
+  "relationships": [
+    {
+      "source_document_id": "DOC-003",
+      "relation": "superseded_by",
+      "target_document_id": "DOC-008"
+    },
+    {
+      "source_document_id": "DOC-007",
+      "relation": "copies_stale_date_from",
+      "target_document_id": "DOC-003"
+    },
+    {
+      "source_document_id": "DOC-004",
+      "relation": "provides_technical_status_for",
+      "target_document_id": "DOC-008"
+    },
+    {
+      "source_document_id": "DOC-006",
+      "relation": "references_dependency_in",
+      "target_document_id": "DOC-004"
+    },
+    {
+      "source_document_id": "DOC-011",
+      "relation": "requests_missing_artifact_for",
+      "target_document_id": "DOC-006"
+    },
+    {
+      "source_document_id": "DOC-012",
+      "relation": "summarizes_without_superseding",
+      "target_document_id": "DOC-008"
+    }
+  ]
+}

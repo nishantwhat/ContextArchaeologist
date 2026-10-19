@@ -1,0 +1,12 @@
+DOCUMENT ID: DOC-010
+TITLE: Recovery Rehearsal Chat Excerpt
+DATE: 2026-04-07
+AUTHOR: Dev Malik
+
+09:12 — Dev: We ran another restore after the index snapshot change. It looked much faster than the March run.
+09:18 — Arun, SRE: I saw the database come back, but I have not checked the integrity report or the final elapsed-time figure.
+09:26 — Dev: I will upload the run record once the checks finish.
+09:40 — Jonah: Can I mark the recovery gate green for the calendar?
+09:44 — Dev: Not yet. Please wait for the record.
+
+No final run record, elapsed time, or data-integrity result is attached to this thread. It is evidence that a rehearsal attempt occurred, not evidence that the recovery gate passed.

@@ -1,0 +1,16 @@
+DOCUMENT ID: DOC-006
+TITLE: Security Review Thread — Production Configuration
+THREAD DATES: 2026-03-16 to 2026-03-19
+AUTHOR: Lena Ortiz, Security Engineering
+STATUS: Review in progress
+
+2026-03-16 10:14 — Lena Ortiz:
+I have reviewed the staging configuration. The production review remains open because the recovery rehearsal has not passed and the final access-control export is missing.
+
+2026-03-18 15:42 — Dev Malik:
+The index snapshot change is deployed to staging. We expect to run the rehearsal this week. Please do not treat deployment as approval.
+
+2026-03-19 09:05 — Lena Ortiz:
+No production approval has been issued in this thread. Once the run record and access-control export are attached, I can complete the review. A verbal “looks good” on the call is not a substitute for a recorded approval.
+
+Related: DOC-004 describes the rehearsal status; DOC-008 later formalizes the launch gate.

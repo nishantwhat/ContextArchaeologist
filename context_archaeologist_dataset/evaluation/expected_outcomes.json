@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "outcomes": {
+    "OUT-01": {
+      "expected_answer": "The original limited-cohort target was 20 April 2026. It was a planning target, not a customer commitment.",
+      "uncertainty_required": false,
+      "must_mention": [
+        "20 April 2026",
+        "planning target, not commitment"
+      ],
+      "must_not_claim": [
+        "current authorized date"
+      ]
+    },
+    "OUT-02": {
+      "expected_answer": "No date is authorized because all four gates must be evidenced: Product release-candidate acceptance; a passing recovery rehearsal with timing and integrity results; recorded Security production approval after reviewing the run record and access-control export; and Customer Operations' frozen rota plus externally approved FAQ. The archive shows each is incomplete or not evidenced.",
+      "uncertainty_required": false,
+      "must_mention": [
+        "four gates",
+        "missing run record/results",
+        "missing access-control export",
+        "no Security approval",
+        "conditional Product acceptance",
+        "rota/FAQ incomplete",
+        "no date authorized"
+      ],
+      "must_not_claim": [
+        "recovery gate passed",
+        "Security approved"
+      ]
+    },
+    "OUT-03": {
+      "expected_answer": "20 April was the January baseline; on 18 February it moved to 11 May; on 2 April the Launch Council withdrew 11 May and made the date to be confirmed after all gates pass. No date currently governs as an authorized launch date.",
+      "uncertainty_required": false,
+      "must_mention": [
+        "20 April",
+        "11 May",
+        "2 April withdrawal",
+        "no authorized date"
+      ],
+      "must_not_claim": [
+        "11 May remains approved"
+      ]
+    },
+    "OUT-04": {
+      "expected_answer": "No. DOC-007 is an unapproved draft. Its 30 March Security line is a placeholder, and the 11 May date was withdrawn by DOC-008. Neither is current authorization.",
+      "uncertainty_required": false,
+      "must_mention": [
+        "draft/unapproved",
+        "placeholder",
+        "superseded/withdrawn 11 May"
+      ],
+      "must_not_claim": [
+        "calendar row proves approval"
+      ]
+    },
+    "OUT-05": {
+      "expected_answer": "The Customer Operations gate is not evidenced as complete. \u201cSupport is ready\u201d meant drafts existed; the rota was not frozen and the FAQ was not approved for external distribution.",
+      "uncertainty_required": false,
+      "must_mention": [
+        "context of informal phrase",
+        "rota not frozen",
+        "FAQ not externally approved"
+      ],
+      "must_not_claim": [
+        "gate complete"
+      ]
+    },
+    "OUT-06": {
+      "expected_answer": "Security needs the final recovery rehearsal run record with elapsed time and data-integrity checks, plus the final production access-control export. No production approval is recorded.",
+      "uncertainty_required": false,
+      "must_mention": [
+        "run record",
+        "elapsed time",
+        "integrity checks",
+        "access-control export",
+        "no production approval"
+      ],
+      "must_not_claim": [
+        "Security approval exists"
+      ]
+    },
+    "OUT-07": {
+      "expected_answer": "The archive does not establish whether the second rehearsal passed. An attempt is reported, but the final elapsed-time figure and integrity checks are absent; do not infer pass or fail.",
+      "uncertainty_required": true,
+      "must_mention": [
+        "attempt occurred",
+        "results absent",
+        "cannot determine pass/fail"
+      ],
+      "must_not_claim": [
+        "passed",
+        "failed"
+      ]
+    },
+    "OUT-08": {
+      "expected_answer": "The exact approval date is unknown. The governing decision says the date will be confirmed only after the gates pass, and no later authorization is present in the archive.",
+      "uncertainty_required": true,
+      "must_mention": [
+        "no exact date available",
+        "gates must pass",
+        "no later authorization"
+      ],
+      "must_not_claim": [
+        "11 May",
+        "invented date"
+      ]
+    },
+    "OUT-09": {
+      "expected_answer": "No. \u201cMay launch remains possible\u201d is a possibility statement in an informal digest, not an approval. DOC-008 controls and says no date is authorized.",
+      "uncertainty_required": false,
+      "must_mention": [
+        "possible is not approved",
+        "DOC-008 governs"
+      ],
+      "must_not_claim": [
+        "May approved"
+      ]
+    },
+    "OUT-10": {
+      "expected_answer": "No evidence shows 20 April was a customer commitment. The charter calls it a planning target and kickoff minutes say it was not a promise.",
+      "uncertainty_required": false,
+      "must_mention": [
+        "charter",
+        "kickoff corroboration",
+        "not a commitment"
+      ],
+      "must_not_claim": [
+        "customer commitment"
+      ]
+    }
+  }
+}

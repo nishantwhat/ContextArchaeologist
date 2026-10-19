@@ -1,0 +1,363 @@
+{
+  "schema_version": "1.0",
+  "scenarios": [
+    {
+      "scenario_id": "EVAL-01",
+      "type": "straightforward_fact",
+      "question": "What was Northstar's original limited-cohort launch target, and was it a commitment?",
+      "expected_outcome_id": "OUT-01",
+      "required_claim_ids": [
+        "CL-001"
+      ],
+      "required_passage_ids": [
+        "DOC-001-P04",
+        "DOC-002-P03"
+      ],
+      "stale_or_conflicting_passage_ids": [],
+      "observable_checks": [
+        "States 20 April 2026 as the original target.",
+        "Clarifies it was a planning target, not a commitment.",
+        "Cites at least one relevant source; ideal answer uses both charter and kickoff."
+      ],
+      "avoid": [
+        "Calling 20 April the current date."
+      ],
+      "retrieval_plan": {
+        "initial_search": "original target launch date",
+        "second_action_required": false,
+        "why": "A direct factual lookup is sufficient."
+      }
+    },
+    {
+      "scenario_id": "EVAL-02",
+      "type": "multi_document_synthesis",
+      "question": "What is preventing Northstar from receiving a launch date now? Identify the gates and the evidence currently missing.",
+      "expected_outcome_id": "OUT-02",
+      "required_claim_ids": [
+        "CL-003",
+        "CL-004",
+        "CL-005",
+        "CL-006",
+        "CL-007",
+        "CL-008"
+      ],
+      "required_passage_ids": [
+        "DOC-008-P05",
+        "DOC-004-P04",
+        "DOC-006-P05",
+        "DOC-009-P03",
+        "DOC-011-P03",
+        "DOC-005-P03"
+      ],
+      "stale_or_conflicting_passage_ids": [
+        "DOC-007-P04"
+      ],
+      "observable_checks": [
+        "Lists all four gates from DOC-008.",
+        "Distinguishes technical attempt from successful recovery evidence.",
+        "Identifies missing access-control export and unrecorded Security approval.",
+        "Notes Product acceptance is conditional and Customer Operations readiness is incomplete.",
+        "States no date is authorized."
+      ],
+      "avoid": [
+        "Claiming one completed task satisfies all gates.",
+        "Treating DOC-007 as authoritative."
+      ],
+      "retrieval_plan": {
+        "initial_search": "launch gates",
+        "second_action_required": true,
+        "next_tool": "Search for recovery run record and security approval status",
+        "expected_discovery": [
+          "DOC-004",
+          "DOC-006",
+          "DOC-009",
+          "DOC-011"
+        ],
+        "why": "The governing decision lists gate requirements but not the current evidence state."
+      }
+    },
+    {
+      "scenario_id": "EVAL-03",
+      "type": "timeline_reconstruction",
+      "question": "Reconstruct the launch-date decisions in order and explain which date, if any, currently governs.",
+      "expected_outcome_id": "OUT-03",
+      "required_claim_ids": [
+        "CL-001",
+        "CL-002",
+        "CL-003"
+      ],
+      "required_passage_ids": [
+        "DOC-001-P04",
+        "DOC-003-P03",
+        "DOC-008-P03",
+        "DOC-008-P08"
+      ],
+      "stale_or_conflicting_passage_ids": [
+        "DOC-007-P04",
+        "DOC-012-P03"
+      ],
+      "observable_checks": [
+        "Orders 20 April baseline, 11 May February change, then withdrawal on 2 April.",
+        "Explains DOC-008 supersedes DOC-003.",
+        "Concludes no date is currently authorized."
+      ],
+      "avoid": [
+        "Reporting 11 May as current approved date.",
+        "Assuming a replacement date was selected."
+      ],
+      "retrieval_plan": {
+        "initial_search": "launch date decision",
+        "second_action_required": true,
+        "next_tool": "Retrieve the decision record that supersedes the February schedule",
+        "expected_discovery": [
+          "DOC-003",
+          "DOC-008"
+        ],
+        "why": "The earlier date appears in several records; authority and supersession must be checked."
+      }
+    },
+    {
+      "scenario_id": "EVAL-04",
+      "type": "stale_document",
+      "question": "A draft calendar lists Security sign-off on 30 March and launch on 11 May. Can those dates be treated as approved?",
+      "expected_outcome_id": "OUT-04",
+      "required_claim_ids": [
+        "CL-002",
+        "CL-003",
+        "CL-005"
+      ],
+      "required_passage_ids": [
+        "DOC-007-P03",
+        "DOC-007-P04",
+        "DOC-008-P03",
+        "DOC-008-P08"
+      ],
+      "stale_or_conflicting_passage_ids": [
+        "DOC-003-P03"
+      ],
+      "observable_checks": [
+        "Identifies DOC-007 as draft version 0.7 and not approved.",
+        "Recognizes 30 March as a placeholder, not proof of sign-off.",
+        "Recognizes 11 May was withdrawn by DOC-008.",
+        "Concludes neither date is currently authorized."
+      ],
+      "avoid": [
+        "Inferring approval from a calendar row."
+      ],
+      "retrieval_plan": {
+        "initial_search": "30 March security sign-off 11 May launch",
+        "second_action_required": true,
+        "next_tool": "Check authoritative launch decision and document status",
+        "expected_discovery": [
+          "DOC-007",
+          "DOC-008"
+        ],
+        "why": "A plausible calendar entry must be evaluated against status and authority."
+      }
+    },
+    {
+      "scenario_id": "EVAL-05",
+      "type": "resolvable_contradiction",
+      "question": "One record says Support is ready, while the launch decision requires Customer Operations readiness. Is that gate complete?",
+      "expected_outcome_id": "OUT-05",
+      "required_claim_ids": [
+        "CL-008"
+      ],
+      "required_passage_ids": [
+        "DOC-005-P03",
+        "DOC-008-P05",
+        "DOC-012-P04"
+      ],
+      "stale_or_conflicting_passage_ids": [],
+      "observable_checks": [
+        "Explains 'ready' meant draft rota and FAQ preparation in context.",
+        "Checks formal requirements: rota frozen and FAQ externally approved.",
+        "Concludes completion is not evidenced."
+      ],
+      "avoid": [
+        "Treating the informal phrase as a formal approval."
+      ],
+      "retrieval_plan": {
+        "initial_search": "Support ready",
+        "second_action_required": true,
+        "next_tool": "Retrieve formal gate definition and readiness notes",
+        "expected_discovery": [
+          "DOC-005",
+          "DOC-008"
+        ],
+        "why": "The phrase must be interpreted against the formal gate criteria."
+      }
+    },
+    {
+      "scenario_id": "EVAL-06",
+      "type": "missing_dependency",
+      "question": "What exact artifacts does Security still need before completing production review?",
+      "expected_outcome_id": "OUT-06",
+      "required_claim_ids": [
+        "CL-005",
+        "CL-007"
+      ],
+      "required_passage_ids": [
+        "DOC-006-P03",
+        "DOC-011-P03"
+      ],
+      "stale_or_conflicting_passage_ids": [
+        "DOC-007-P03"
+      ],
+      "observable_checks": [
+        "Names final recovery rehearsal run record with elapsed time and integrity checks.",
+        "Names final production access-control export.",
+        "States no production approval is recorded."
+      ],
+      "avoid": [
+        "Saying only that Security needs more time.",
+        "Treating the planned 30 March sign-off as approval."
+      ],
+      "retrieval_plan": {
+        "initial_search": "Security missing artifacts",
+        "second_action_required": false,
+        "why": "The request record directly names the required artifacts."
+      }
+    },
+    {
+      "scenario_id": "EVAL-07",
+      "type": "unresolved_contradiction_or_unknown",
+      "question": "Did the second recovery rehearsal pass the 60-minute objective and data-integrity checks?",
+      "expected_outcome_id": "OUT-07",
+      "required_claim_ids": [
+        "CL-004",
+        "CL-009"
+      ],
+      "required_passage_ids": [
+        "DOC-010-P02",
+        "DOC-010-P03",
+        "DOC-004-P04"
+      ],
+      "stale_or_conflicting_passage_ids": [],
+      "observable_checks": [
+        "States that an attempt occurred.",
+        "States final elapsed time and integrity results are absent.",
+        "Abstains from declaring pass or fail.",
+        "Cites the incomplete chat and/or engineering status."
+      ],
+      "avoid": [
+        "Inferring success from 'looked much faster'.",
+        "Inferring failure solely from the March run."
+      ],
+      "retrieval_plan": {
+        "initial_search": "second recovery rehearsal result",
+        "second_action_required": true,
+        "next_tool": "Search for final run record or follow-up evidence",
+        "expected_discovery": [
+          "DOC-010",
+          "DOC-011"
+        ],
+        "why": "The first hit is an informal report; further retrieval confirms no final result is present in the archive."
+      }
+    },
+    {
+      "scenario_id": "EVAL-08",
+      "type": "insufficient_evidence_abstention",
+      "question": "What exact calendar date will Launch Council approve for the limited-cohort launch?",
+      "expected_outcome_id": "OUT-08",
+      "required_claim_ids": [
+        "CL-003",
+        "CL-010"
+      ],
+      "required_passage_ids": [
+        "DOC-008-P03",
+        "DOC-008-P08",
+        "DOC-012-P04"
+      ],
+      "stale_or_conflicting_passage_ids": [
+        "DOC-003-P03",
+        "DOC-007-P03"
+      ],
+      "observable_checks": [
+        "Does not invent a date.",
+        "States the date is to be confirmed after gates pass.",
+        "Explains that no later authorization appears in the available archive.",
+        "Flags 11 May as withdrawn/stale."
+      ],
+      "avoid": [
+        "Answering 11 May or inventing a new date."
+      ],
+      "retrieval_plan": {
+        "initial_search": "approved launch date",
+        "second_action_required": true,
+        "next_tool": "Search for later Launch Council authorization and gate evidence",
+        "expected_discovery": [
+          "DOC-008",
+          "DOC-012"
+        ],
+        "why": "Must verify whether any later authorization supersedes the no-date decision."
+      }
+    },
+    {
+      "scenario_id": "EVAL-09",
+      "type": "misleading_context",
+      "question": "The weekly slide says \u201cMay launch remains possible.\u201d Does this mean the launch is approved for May?",
+      "expected_outcome_id": "OUT-09",
+      "required_claim_ids": [
+        "CL-003"
+      ],
+      "required_passage_ids": [
+        "DOC-012-P03",
+        "DOC-008-P08"
+      ],
+      "stale_or_conflicting_passage_ids": [
+        "DOC-003-P03"
+      ],
+      "observable_checks": [
+        "Interprets 'possible' as possibility rather than authorization.",
+        "Uses DOC-008 as governing decision.",
+        "Concludes May is not an approved date."
+      ],
+      "avoid": [
+        "Converting possibility language into a commitment."
+      ],
+      "retrieval_plan": {
+        "initial_search": "May launch remains possible",
+        "second_action_required": true,
+        "next_tool": "Retrieve governing Launch Council decision",
+        "expected_discovery": [
+          "DOC-012",
+          "DOC-008"
+        ],
+        "why": "The status digest explicitly limits the phrase, and the formal decision controls authorization."
+      }
+    },
+    {
+      "scenario_id": "EVAL-10",
+      "type": "corroboration",
+      "question": "Was the original 20 April date a customer commitment? Evaluate the evidence rather than relying on a single phrase.",
+      "expected_outcome_id": "OUT-10",
+      "required_claim_ids": [
+        "CL-001"
+      ],
+      "required_passage_ids": [
+        "DOC-001-P04",
+        "DOC-002-P03"
+      ],
+      "stale_or_conflicting_passage_ids": [],
+      "observable_checks": [
+        "Uses charter and kickoff context as corroboration.",
+        "Distinguishes internal planning target from customer commitment.",
+        "Cites sources."
+      ],
+      "avoid": [
+        "Claiming customer-facing commitment without evidence."
+      ],
+      "retrieval_plan": {
+        "initial_search": "20 April commitment",
+        "second_action_required": true,
+        "next_tool": "Retrieve kickoff context to corroborate charter wording",
+        "expected_discovery": [
+          "DOC-001",
+          "DOC-002"
+        ],
+        "why": "The wording should be corroborated with meeting context."
+      }
+    }
+  ]
+}

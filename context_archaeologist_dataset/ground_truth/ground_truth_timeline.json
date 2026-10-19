@@ -1,0 +1,141 @@
+{
+  "fictional_organization": "Asterion Works",
+  "project": "Northstar limited-cohort launch",
+  "as_of_date": "2026-04-09",
+  "events": [
+    {
+      "date": "2026-01-08",
+      "event": "Project kickoff; 20 April recorded as a working target.",
+      "decision_maker": "Mira Sen / cross-functional team",
+      "source_ids": [
+        "DOC-001",
+        "DOC-002"
+      ],
+      "truth_status": "historical_baseline"
+    },
+    {
+      "date": "2026-02-18",
+      "event": "Target moved to 11 May, with launch gates unchanged.",
+      "decision_maker": "Mira Sen",
+      "source_ids": [
+        "DOC-003"
+      ],
+      "truth_status": "valid_then_superseded"
+    },
+    {
+      "date": "2026-03-09",
+      "event": "Recovery rehearsal restored database but took 74 minutes against 60-minute objective.",
+      "decision_maker": "Platform Engineering",
+      "source_ids": [
+        "DOC-004"
+      ],
+      "truth_status": "failed_timing_objective"
+    },
+    {
+      "date": "2026-03-16",
+      "event": "Security review remained open pending recovery evidence and final access-control export.",
+      "decision_maker": "Lena Ortiz",
+      "source_ids": [
+        "DOC-006"
+      ],
+      "truth_status": "open_dependency"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "Draft calendar copied 11 May and inserted placeholder Security sign-off date.",
+      "decision_maker": "Jonah Pike",
+      "source_ids": [
+        "DOC-007"
+      ],
+      "truth_status": "unapproved_stale_artifact"
+    },
+    {
+      "date": "2026-04-02",
+      "event": "Launch Council withdrew 11 May; no date authorized until all four gates are evidenced.",
+      "decision_maker": "Mira Sen / Launch Council",
+      "source_ids": [
+        "DOC-008"
+      ],
+      "truth_status": "current_authoritative_decision"
+    },
+    {
+      "date": "2026-04-04",
+      "event": "Product review remained conditional pending duplicate-notification fix and retest.",
+      "decision_maker": "Evan Cho",
+      "source_ids": [
+        "DOC-009"
+      ],
+      "truth_status": "incomplete_gate"
+    },
+    {
+      "date": "2026-04-07",
+      "event": "Second recovery attempt reported; final elapsed time and integrity evidence not attached.",
+      "decision_maker": "Dev Malik",
+      "source_ids": [
+        "DOC-010"
+      ],
+      "truth_status": "unresolved_outcome"
+    },
+    {
+      "date": "2026-04-08",
+      "event": "Security reiterated that final run record and access-control export were missing from review record; no production approval recorded.",
+      "decision_maker": "Lena Ortiz",
+      "source_ids": [
+        "DOC-011"
+      ],
+      "truth_status": "open_dependency"
+    },
+    {
+      "date": "2026-04-09",
+      "event": "Status digest confirms no authorized date and gate evidence incomplete.",
+      "decision_maker": "Jonah Pike",
+      "source_ids": [
+        "DOC-012"
+      ],
+      "truth_status": "latest_summary"
+    }
+  ],
+  "decision_precedence": [
+    "DOC-008 governs current launch policy and date authorization.",
+    "DOC-003 remains valid only as historical evidence of the February change.",
+    "DOC-007 is an unapproved draft and cannot establish approval or current date.",
+    "Functional evidence records govern their own operational details; the status digest does not replace them."
+  ],
+  "known_unknowns": [
+    {
+      "id": "UNK-01",
+      "question": "Did the 7 April recovery rehearsal pass its timing and integrity checks?",
+      "why_unknown": "No final run record or results are included. Chat explicitly says to wait.",
+      "evidence_that_would_resolve_it": "Final Platform Engineering run record."
+    },
+    {
+      "id": "UNK-02",
+      "question": "Does the final production access-control export exist outside the reviewed archive?",
+      "why_unknown": "Security has not received it in the review record; archive cannot establish whether it exists elsewhere.",
+      "evidence_that_would_resolve_it": "Identity Operations artifact or delivery confirmation."
+    },
+    {
+      "id": "UNK-03",
+      "question": "What exact date will Launch Council authorize?",
+      "why_unknown": "Date depends on future completion of four gates and a later decision; no later authorization is present.",
+      "evidence_that_would_resolve_it": "Complete gate artifacts and subsequent Launch Council decision."
+    }
+  ],
+  "nonmalicious_misleading_statements": [
+    {
+      "statement": "Support is ready",
+      "source_id": "DOC-005",
+      "interpretation": "Means draft rota and FAQ preparation, not gate completion."
+    },
+    {
+      "statement": "May launch remains possible",
+      "source_id": "DOC-012",
+      "interpretation": "Possibility, not authorization."
+    },
+    {
+      "statement": "Product review complete",
+      "source_id": "DOC-009",
+      "interpretation": "Walkthrough complete; formal acceptance conditional on retest."
+    }
+  ]
+}
