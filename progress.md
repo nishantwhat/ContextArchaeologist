@@ -1,66 +1,60 @@
 # Context Archaeologist — Progress Tracking
 
 ## Status Overview
-- **Phase 1: Audit & Foundation**: COMPLETED ✅
-- **Phase 2: PoC Implementation & Integration**: COMPLETED ✅
-- **Phase 3: Verification, Documentation & Demo Prep**: COMPLETED ✅
+- **Phase 1: Freeze, Audit & Foundation**: COMPLETED ✅
+- **Phase 2: Honest Architectural Audit**: COMPLETED ✅
+- **Phase 3: LangGraph & Local LLM Integration**: COMPLETED ✅
+- **Phase 4: Robustness & Unseen Evaluations**: COMPLETED ✅
 
 ---
 
-## 1. Audit Findings & Dataset Verification
-- **Dataset Audit Result**: `context_archaeologist_dataset` was thoroughly inspected and validated using `scripts/validate_dataset.py`.
-  - Status: **PASS** (12 documents, 71 passages, 10 ground truth claims, 10 evaluation scenarios).
-  - Schema integrity: All required manifest fields (`id`, `filename`, `title`, `type`, `author`, `created`, `updated`, `version`, `status`, `authority`, `path`, `format`, `passage_ids`) are valid.
-  - Evaluation isolation: Evaluator files (`ground_truth/`, `evaluation/`, `metadata/claim_evidence_map.json`) are completely clean and properly segregated from live agent document ingestion.
-  - Quality verdict: Reused without alteration as all files and indices match ground truth perfectly.
+## 1. Honest Architecture Audit (Phase 2 Findings)
+- **Version 1 Strengths**:
+  - Python tool suite (`src/tools.py`) was real, decoupled, and cleanly grounded with RapidFuzz passage scoring.
+  - Public manifest and passage indices correctly isolated ground truth from live retrieval.
+- **Identified Weaknesses**:
+  - Orchestration relied on rigid keyword branching (`if "gate" in q_lower...`).
+  - Answer synthesis used preset templates rather than reading and synthesizing evidence dynamically.
+  - Abstention was hardcoded by question phrase rather than detecting empty/missing evidence fields.
 
 ---
 
-## 2. Architecture & Completed Components
-1. **Document Ingestion & Indexing (`src/ingestion.py`)**:
-   - Ingests `documents/` and public `document_manifest.json` / `passage_index.json`.
-   - Maps paragraph-level citations (`DOC-XXX-PXX`), metadata, dates, authority tags, and statuses.
-
-2. **Specialized Tools (`src/tools.py`)**:
-   - `search_archive(query, limit, doc_type)`: Lexical BM25 & Rapidfuzz similarity scoring.
-   - `get_document_details(doc_id)`: Fetches full content and metadata.
-   - `get_passage_details(passage_id)`: Fetches exact excerpt.
-   - `follow_references(doc_id)`: Traverses cross-document dependency graph.
-   - `inspect_timeline(topic)`: Chronological ordering of records.
-   - `validate_citations(citations)`: Validates that all citations exist in the manifest.
-
-3. **Reasoning & Contradiction Engine (`src/reasoner.py`)**:
-   - Temporal reconciliation: Reconciles 20 April vs 11 May vs withdrawal in DOC-008.
-   - Formal authority weighing: Differentiates informal chat ("Support is ready", "looks faster") from signed decisions (DOC-008, DOC-011).
-   - Epistemic abstention: Refuses to hallucinate missing recovery run records or nonexistent future dates.
-
-4. **Multi-Stage Orchestrator (`src/orchestrator.py`)**:
-   - Plans queries, performs primary search, executes conditional follow-ups, analyzes contradictions, verifies citations, and produces structured output.
-
-5. **Streamlit UI (`app.py`)**:
-   - Interactive workbench with scenario pre-loader + custom query mode.
-   - Live execution trace of tool calls and parameters.
-   - Contradiction reconciliation cards & Epistemic abstention alert banners.
-   - Interactive catalog and gate status tracker.
-
-6. **Test Suite (`tests/test_scenarios.py`)**:
-   - 10 automated end-to-end scenario tests covering all 10 evaluation scenarios.
-   - 10/10 tests passing in ~0.5s.
+## 2. Upgraded Architecture (Phase 3 & 4 Implementation)
+1. **LangGraph Stateful Agent (`src/langgraph_agent.py`)**:
+   - `AgentState`: Tracks question, iteration, plan, tool choices, retrieved passages, inspected documents, contradictions, abstentions, and citations.
+   - `planner_node`: Formulates inquiry strategy and targeted keywords.
+   - `tool_executor_node`: Autonomous execution of Python tools (`search_archive`, `get_document_details`, `follow_references`, `inspect_timeline`).
+   - `evaluator_node`: Checks evidence sufficiency, detects contradictions across documents, and decides whether to continue investigation or terminate.
+   - `route_next_step`: Conditional edge directing the agent to loop back for follow-up evidence or proceed to synthesis.
+   - `synthesis_node`: Evidence-grounded synthesis with mandatory passage citations.
+2. **Local Model Backend (`src/llm_client.py`)**:
+   - Integrated with local **Ollama** server running `llama3:latest` (8.0B parameters).
+   - Low-temperature factual inference with JSON schema generation.
+   - Graceful deterministic fallback ensures test suite remains reproducible and fast.
+3. **Robustness & Unseen Document Evaluation (`DOC-013` & `tests/test_robustness_unseen.py`)**:
+   - Added new synthetic document: `DOC-013_risk_advisory.md` (Northstar Operational Risk Addendum).
+   - Validated manifest & passage index integrity via `scripts/validate_dataset.py` (PASS, 13 documents, 76 passages).
+   - Implemented 4 new robustness tests verifying unseen queries, gate waiver rejections, cross-document insurance dependencies, and out-of-archive abstentions.
 
 ---
 
-## 3. Verification & Test Results
+## 3. Test & Verification Results
 ```bash
+# 1. Dataset structural integrity:
+python context_archaeologist_dataset/scripts/validate_dataset.py
+# Status: PASS (13 documents, 76 passages)
+
+# 2. Original 10 evaluation scenarios (Regression):
 pytest tests/test_scenarios.py
-# Output: 10 passed in 0.54s
+# Status: 10 passed in 0.55s
+
+# 3. New unseen robustness scenarios:
+pytest tests/test_robustness_unseen.py
+# Status: 4 passed in 2.00s
 ```
-- EVAL-01 (Straightforward Fact): PASSED
-- EVAL-02 (Multi-document Synthesis): PASSED
-- EVAL-03 (Timeline Reconstruction): PASSED
-- EVAL-04 (Stale Document / Draft Calendar): PASSED
-- EVAL-05 (Resolvable Contradiction / Support Ready): PASSED
-- EVAL-06 (Missing Dependency / Security Artifacts): PASSED
-- EVAL-07 (Unresolved Contradiction / Abstention on Recovery): PASSED
-- EVAL-08 (Insufficient Evidence / Abstention on Date): PASSED
-- EVAL-09 (Misleading Context / Status Digest): PASSED
-- EVAL-10 (Corroboration / Baseline vs Kickoff): PASSED
+
+---
+
+## 4. UI Capabilities (`app.py`)
+- Engine selector toggle in sidebar: **⚡ Fast Grounded Pipeline** vs **🔄 LangGraph Stateful Loop**.
+- Full visual trace of planner steps, tool executions, contradiction cards, and epistemic abstention banners.

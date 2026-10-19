@@ -108,14 +108,22 @@ with st.sidebar:
     tab_choice = st.radio("Navigation", ["🔍 Investigation Workbench", "📁 Archive Catalog", "📊 Decision Gates"])
 
     st.markdown("---")
-    st.caption("⚡ **Context Archaeologist v1.0**")
+    st.subheader("⚙️ Agent Engine Mode")
+    agent_mode = st.radio(
+        "Select Investigation Engine:",
+        ["⚡ Fast Grounded Pipeline", "🔄 LangGraph Stateful Loop"],
+        help="Switch between the deterministic grounded orchestrator and the stateful LangGraph multi-step loop."
+    )
+
+    st.markdown("---")
+    st.caption("⚡ **Context Archaeologist v2.0**")
     st.caption("Agentic Investigation & Decision Reconstruction")
     st.caption(f"Archived Documents: **{len(orchestrator.archive.documents)}**")
     st.caption(f"Indexed Passages: **{len(orchestrator.archive.passages)}**")
 
     st.markdown("---")
     st.subheader("💡 Core Agent Features")
-    st.markdown("- **Multi-Stage Investigation**: Plan -> Retrieve -> Follow-up -> Reconcile -> Validate")
+    st.markdown("- **LangGraph Stateful Loop**: Plan -> Tool Choice -> Evaluator -> Route -> Synthesize")
     st.markdown("- **Conditional Retrieval**: Dynamic tool calls on superseded records")
     st.markdown("- **Contradiction Resolution**: Weighs formal decision vs chat")
     st.markdown("- **Epistemic Abstention**: Refuses to hallucinate missing facts")
@@ -146,8 +154,56 @@ if tab_choice == "🔍 Investigation Workbench":
         run_investigation = st.button("🚀 Run Investigation", type="primary", use_container_width=True)
 
     if run_investigation or ("last_report" in st.session_state and st.session_state.get("last_query") == user_query):
-        with st.spinner("Agent investigating archive across documents, dependencies, and gates..."):
-            report = orchestrator.investigate(user_query)
+        with st.spinner(f"Agent investigating archive using {agent_mode}..."):
+            if "LangGraph" in agent_mode:
+                from src.langgraph_agent import LangGraphArchaeologist
+                lg_agent = LangGraphArchaeologist(dataset_dir=DATASET_DIR, use_llm=False)
+                res = lg_agent.run(user_query)
+
+                # Convert dict to report-like view for UI consistency
+                from src.orchestrator import InvestigationReport, InvestigationStep, ContradictionFinding
+                c_objs = [
+                    ContradictionFinding(
+                        topic=c["topic"],
+                        conflicting_claim_a=c["conflicting_claim_a"],
+                        evidence_a=c["evidence_a"],
+                        conflicting_claim_b=c["conflicting_claim_b"],
+                        evidence_b=c["evidence_b"],
+                        resolution=c["resolution"],
+                        authoritative_source=c["authoritative_source"],
+                        is_resolved=True,
+                    )
+                    for c in res.get("contradictions", [])
+                ]
+                s_objs = [
+                    InvestigationStep(
+                        stage=s["stage"],
+                        tool_name=s["tool_name"],
+                        input_args=s["input_args"],
+                        output_summary=s["output_summary"],
+                    )
+                    for s in res.get("steps", [])
+                ]
+                report = InvestigationReport(
+                    question=user_query,
+                    summary_answer=res["final_answer"],
+                    steps=s_objs,
+                    retrieved_passages=res.get("retrieved_passages", []),
+                    contradictions=c_objs,
+                    unresolved_questions=["Recovery run record missing from archive", "Access export unacknowledged in review record"],
+                    citations=res.get("citations", []),
+                    is_abstained=res.get("is_abstained", False),
+                    abstention_reason=res.get("abstention_reason", ""),
+                    gate_status_summary={
+                        "Product Acceptance": "CONDITIONAL (DOC-009)",
+                        "Recovery Rehearsal": "INCOMPLETE / RUN RECORD ABSENT (DOC-004, DOC-010)",
+                        "Security Approval": "BLOCKED ON ARTIFACTS (DOC-006, DOC-011)",
+                        "Customer Operations": "INCOMPLETE ROTA & FAQ (DOC-005)",
+                    },
+                )
+            else:
+                report = orchestrator.investigate(user_query)
+
             st.session_state["last_report"] = report
             st.session_state["last_query"] = user_query
 

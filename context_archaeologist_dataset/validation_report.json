@@ -1,9 +1,9 @@
 {
   "status": "PASS",
-  "document_count": 12,
+  "document_count": 13,
   "claim_count": 10,
   "scenario_count": 10,
-  "passage_count": 71,
+  "passage_count": 76,
   "errors": [],
   "warnings": []
 }

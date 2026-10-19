@@ -265,6 +265,27 @@
         "DOC-012-P04",
         "DOC-012-P05"
       ]
+    },
+    {
+      "id": "DOC-013",
+      "filename": "DOC-013_risk_advisory.md",
+      "title": "Northstar Phase 2 Expansion — Operational Risk Addendum",
+      "type": "risk_advisory",
+      "author": "Marcus Vance, Chief Risk Officer",
+      "created": "2026-04-12",
+      "updated": "2026-04-12",
+      "version": "1.0",
+      "status": "authoritative_risk_advisory",
+      "authority": "high_for_risk_and_compliance",
+      "path": "documents/DOC-013_risk_advisory.md",
+      "format": "markdown",
+      "passage_ids": [
+        "DOC-013-P01",
+        "DOC-013-P02",
+        "DOC-013-P03",
+        "DOC-013-P04",
+        "DOC-013-P05"
+      ]
     }
   ],
   "passage_id_convention": "DOC-NNN-PNN; paragraph/block order in the source file, starting at 01.",
