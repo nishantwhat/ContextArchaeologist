@@ -1,0 +1,272 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "context-archaeologist-northstar-v1",
+  "description": "Synthetic Northstar launch archive; documents only are application-facing.",
+  "documents": [
+    {
+      "id": "DOC-001",
+      "filename": "DOC-001_project_charter.md",
+      "title": "Northstar Launch \u2014 Project Charter",
+      "type": "project_charter",
+      "author": "Mira Sen, VP Product",
+      "created": "2026-01-08",
+      "updated": "2026-01-12",
+      "version": "1.1",
+      "status": "approved_baseline",
+      "authority": "high_for_scope_low_for_later_operational_changes",
+      "path": "documents/DOC-001_project_charter.md",
+      "format": "markdown",
+      "passage_ids": [
+        "DOC-001-P01",
+        "DOC-001-P02",
+        "DOC-001-P03",
+        "DOC-001-P04",
+        "DOC-001-P05",
+        "DOC-001-P06",
+        "DOC-001-P07",
+        "DOC-001-P08"
+      ]
+    },
+    {
+      "id": "DOC-002",
+      "filename": "DOC-002_kickoff_minutes.md",
+      "title": "Northstar Kickoff Minutes",
+      "type": "meeting_minutes",
+      "author": "Jonah Pike, Program Manager",
+      "created": "2026-01-09",
+      "updated": "2026-01-09",
+      "version": "1.0",
+      "status": "meeting_record",
+      "authority": "medium_for_attendance_and_discussion",
+      "path": "documents/DOC-002_kickoff_minutes.md",
+      "format": "markdown",
+      "passage_ids": [
+        "DOC-002-P01",
+        "DOC-002-P02",
+        "DOC-002-P03",
+        "DOC-002-P04",
+        "DOC-002-P05",
+        "DOC-002-P06",
+        "DOC-002-P07"
+      ]
+    },
+    {
+      "id": "DOC-003",
+      "filename": "DOC-003_schedule_decision_february.md",
+      "title": "Decision Record: Move Northstar Cohort Window",
+      "type": "decision_record",
+      "author": "Mira Sen, VP Product",
+      "created": "2026-02-18",
+      "updated": "2026-02-18",
+      "version": "1.0",
+      "status": "superseded",
+      "authority": "high_for_decision_history",
+      "path": "documents/DOC-003_schedule_decision_february.md",
+      "format": "markdown",
+      "passage_ids": [
+        "DOC-003-P01",
+        "DOC-003-P02",
+        "DOC-003-P03",
+        "DOC-003-P04",
+        "DOC-003-P05",
+        "DOC-003-P06"
+      ]
+    },
+    {
+      "id": "DOC-004",
+      "filename": "DOC-004_engineering_dependency_update.md",
+      "title": "Engineering Dependency Update \u2014 Backup and Recovery",
+      "type": "dependency_report",
+      "author": "Dev Malik, Platform Engineering Lead",
+      "created": "2026-03-06",
+      "updated": "2026-03-10",
+      "version": "1.2",
+      "status": "current_technical_update",
+      "authority": "high_for_engineering_execution",
+      "path": "documents/DOC-004_engineering_dependency_update.md",
+      "format": "markdown",
+      "passage_ids": [
+        "DOC-004-P01",
+        "DOC-004-P02",
+        "DOC-004-P03",
+        "DOC-004-P04",
+        "DOC-004-P05",
+        "DOC-004-P06",
+        "DOC-004-P07",
+        "DOC-004-P08"
+      ]
+    },
+    {
+      "id": "DOC-005",
+      "filename": "DOC-005_support_readiness_notes.md",
+      "title": "Customer Operations Readiness Notes",
+      "type": "status_update",
+      "author": "Priya Nair, Customer Operations",
+      "created": "2026-03-12",
+      "updated": "2026-03-12",
+      "version": "1.0",
+      "status": "working_notes",
+      "authority": "medium_for_support_preparation",
+      "path": "documents/DOC-005_support_readiness_notes.md",
+      "format": "markdown",
+      "passage_ids": [
+        "DOC-005-P01",
+        "DOC-005-P02",
+        "DOC-005-P03",
+        "DOC-005-P04",
+        "DOC-005-P05",
+        "DOC-005-P06"
+      ]
+    },
+    {
+      "id": "DOC-006",
+      "filename": "DOC-006_security_review_thread.txt",
+      "title": "Security Review Thread \u2014 Production Configuration",
+      "type": "internal_message_thread",
+      "author": "Lena Ortiz, Security Engineering",
+      "created": "2026-03-16",
+      "updated": "2026-03-19",
+      "version": "1.0",
+      "status": "review_in_progress",
+      "authority": "high_for_security_review_state",
+      "path": "documents/DOC-006_security_review_thread.txt",
+      "format": "txt",
+      "passage_ids": [
+        "DOC-006-P01",
+        "DOC-006-P02",
+        "DOC-006-P03",
+        "DOC-006-P04",
+        "DOC-006-P05"
+      ]
+    },
+    {
+      "id": "DOC-007",
+      "filename": "DOC-007_draft_launch_calendar.md",
+      "title": "Northstar Draft Launch Calendar",
+      "type": "project_plan",
+      "author": "Jonah Pike, Program Manager",
+      "created": "2026-03-20",
+      "updated": "2026-03-20",
+      "version": "0.7",
+      "status": "draft_not_approved",
+      "authority": "low_for_authorized_date",
+      "path": "documents/DOC-007_draft_launch_calendar.md",
+      "format": "markdown",
+      "passage_ids": [
+        "DOC-007-P01",
+        "DOC-007-P02",
+        "DOC-007-P03",
+        "DOC-007-P04",
+        "DOC-007-P05"
+      ]
+    },
+    {
+      "id": "DOC-008",
+      "filename": "DOC-008_launch_gate_decision.md",
+      "title": "Launch Council Decision: Northstar Release Gate",
+      "type": "decision_record",
+      "author": "Mira Sen, Launch Council Chair",
+      "created": "2026-04-02",
+      "updated": "2026-04-02",
+      "version": "1.0",
+      "status": "authoritative_current_decision",
+      "authority": "highest_for_launch_policy_and_date",
+      "path": "documents/DOC-008_launch_gate_decision.md",
+      "format": "markdown",
+      "passage_ids": [
+        "DOC-008-P01",
+        "DOC-008-P02",
+        "DOC-008-P03",
+        "DOC-008-P04",
+        "DOC-008-P05",
+        "DOC-008-P06",
+        "DOC-008-P07",
+        "DOC-008-P08"
+      ]
+    },
+    {
+      "id": "DOC-009",
+      "filename": "DOC-009_product_acceptance_note.md",
+      "title": "Release Candidate Review Notes",
+      "type": "approval_record",
+      "author": "Evan Cho, Product Quality",
+      "created": "2026-04-04",
+      "updated": "2026-04-04",
+      "version": "1.0",
+      "status": "conditional_feedback",
+      "authority": "high_for_product_review_only",
+      "path": "documents/DOC-009_product_acceptance_note.md",
+      "format": "markdown",
+      "passage_ids": [
+        "DOC-009-P01",
+        "DOC-009-P02",
+        "DOC-009-P03",
+        "DOC-009-P04",
+        "DOC-009-P05"
+      ]
+    },
+    {
+      "id": "DOC-010",
+      "filename": "DOC-010_rehearsal_chat_excerpt.txt",
+      "title": "Recovery Rehearsal Chat Excerpt",
+      "type": "internal_message_thread",
+      "author": "Dev Malik, Platform Engineering Lead",
+      "created": "2026-04-07",
+      "updated": "2026-04-07",
+      "version": "1.0",
+      "status": "incomplete_evidence",
+      "authority": "medium_for_reported_status",
+      "path": "documents/DOC-010_rehearsal_chat_excerpt.txt",
+      "format": "txt",
+      "passage_ids": [
+        "DOC-010-P01",
+        "DOC-010-P02",
+        "DOC-010-P03"
+      ]
+    },
+    {
+      "id": "DOC-011",
+      "filename": "DOC-011_access_export_request.md",
+      "title": "Outstanding Security Evidence Request",
+      "type": "dependency_report",
+      "author": "Lena Ortiz, Security Engineering",
+      "created": "2026-04-08",
+      "updated": "2026-04-08",
+      "version": "1.0",
+      "status": "open_dependency",
+      "authority": "high_for_security_evidence_status",
+      "path": "documents/DOC-011_access_export_request.md",
+      "format": "markdown",
+      "passage_ids": [
+        "DOC-011-P01",
+        "DOC-011-P02",
+        "DOC-011-P03",
+        "DOC-011-P04",
+        "DOC-011-P05"
+      ]
+    },
+    {
+      "id": "DOC-012",
+      "filename": "DOC-012_launch_status_digest.md",
+      "title": "Northstar Status Digest",
+      "type": "status_update",
+      "author": "Jonah Pike, Program Manager",
+      "created": "2026-04-09",
+      "updated": "2026-04-09",
+      "version": "1.0",
+      "status": "informal_summary",
+      "authority": "medium_for_summary_low_for_gate_authority",
+      "path": "documents/DOC-012_launch_status_digest.md",
+      "format": "markdown",
+      "passage_ids": [
+        "DOC-012-P01",
+        "DOC-012-P02",
+        "DOC-012-P03",
+        "DOC-012-P04",
+        "DOC-012-P05"
+      ]
+    }
+  ],
+  "passage_id_convention": "DOC-NNN-PNN; paragraph/block order in the source file, starting at 01.",
+  "citation_convention": "Cite document_id, filename, passage_id, and a short supporting excerpt. Never cite a passage not retrieved."
+}

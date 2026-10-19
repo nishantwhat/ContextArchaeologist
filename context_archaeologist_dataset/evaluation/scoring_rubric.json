@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "scoring_scale": {
+    "0": "Incorrect, unsupported, or fabricated answer",
+    "1": "Partially correct but misses key qualification or evidence",
+    "2": "Correct conclusion with incomplete evidence or one important omission",
+    "3": "Correct, appropriately qualified conclusion with sufficient citations"
+  },
+  "per_scenario_scoring": {
+    "correctness": 0.4,
+    "evidence_citation": 0.3,
+    "authority_and_temporal_reasoning": 0.2,
+    "uncertainty_calibration": 0.1
+  },
+  "citation_rules": [
+    "Every material factual claim should cite one or more retrieved passage IDs.",
+    "Citations must resolve to document IDs and filenames in metadata/passage_index.json.",
+    "A source that is stale or a draft may be cited as evidence of what that record said, not as proof of current status.",
+    "Do not cite ground_truth or evaluation files in application answers."
+  ],
+  "abstention_rules": [
+    "For EVAL-07, do not state pass/fail because final evidence is missing.",
+    "For EVAL-08, do not provide an exact future date.",
+    "Qualify statements about missing evidence: 'not present in this archive/review record' is not equivalent to 'does not exist anywhere'."
+  ],
+  "scenario_max_score": 3,
+  "recommended_aggregate": "Report mean score and per-dimension scores; separately report unsupported-claim count, citation validity, and correct abstention rate."
+}

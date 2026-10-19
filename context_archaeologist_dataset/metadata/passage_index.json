@@ -1,0 +1,502 @@
+{
+  "schema_version": "1.0",
+  "passages": {
+    "DOC-001-P01": {
+      "document_id": "DOC-001",
+      "filename": "DOC-001_project_charter.md",
+      "passage_id": "DOC-001-P01",
+      "section": "Northstar Launch \u2014 Project Charter",
+      "expected_excerpt": "# Northstar Launch \u2014 Project Charter"
+    },
+    "DOC-001-P02": {
+      "document_id": "DOC-001",
+      "filename": "DOC-001_project_charter.md",
+      "passage_id": "DOC-001-P02",
+      "section": "Body",
+      "expected_excerpt": "**Document ID:** DOC-001 **Owner:** Mira Sen, VP Product **Created:** 2026-01-08 \u00b7 **Updated:** 2026-01-12 \u00b7 **Version:** 1.1 **Status:** Approved baseline"
+    },
+    "DOC-001-P03": {
+      "document_id": "DOC-001",
+      "filename": "DOC-001_project_charter.md",
+      "passage_id": "DOC-001-P03",
+      "section": "Purpose",
+      "expected_excerpt": "## Purpose Northstar is Asterion Works' customer-facing workspace for consolidating service requests, account notes, and operational handoffs. The launch is intended for a limited cohort of existing business customers be"
+    },
+    "DOC-001-P04": {
+      "document_id": "DOC-001",
+      "filename": "DOC-001_project_charter.md",
+      "passage_id": "DOC-001-P04",
+      "section": "Baseline plan",
+      "expected_excerpt": "## Baseline plan The January planning baseline targeted a **20 April 2026** limited-cohort launch. That date was a planning target, not a contractual commitment. The product team expected the limited cohort to include ap"
+    },
+    "DOC-001-P05": {
+      "document_id": "DOC-001",
+      "filename": "DOC-001_project_charter.md",
+      "passage_id": "DOC-001-P05",
+      "section": "Launch conditions",
+      "expected_excerpt": "## Launch conditions Before a cohort can be invited, the team needs: - a release candidate accepted by Product; - Security approval for the production configuration; - a successful recovery rehearsal for the customer-dat"
+    },
+    "DOC-001-P06": {
+      "document_id": "DOC-001",
+      "filename": "DOC-001_project_charter.md",
+      "passage_id": "DOC-001-P06",
+      "section": "Body",
+      "expected_excerpt": "The charter does not define the final approver for each condition. Those assignments are maintained in operational decision records."
+    },
+    "DOC-001-P07": {
+      "document_id": "DOC-001",
+      "filename": "DOC-001_project_charter.md",
+      "passage_id": "DOC-001-P07",
+      "section": "Scope boundaries",
+      "expected_excerpt": "## Scope boundaries The initial cohort excludes automated billing changes and bulk import. The team may adjust the launch date as dependencies become clearer, but changes must be recorded in a decision record and reflect"
+    },
+    "DOC-001-P08": {
+      "document_id": "DOC-001",
+      "filename": "DOC-001_project_charter.md",
+      "passage_id": "DOC-001-P08",
+      "section": "Related records",
+      "expected_excerpt": "## Related records See DOC-003 for the February scheduling decision and DOC-008 for the later release-gate decision."
+    },
+    "DOC-002-P01": {
+      "document_id": "DOC-002",
+      "filename": "DOC-002_kickoff_minutes.md",
+      "passage_id": "DOC-002-P01",
+      "section": "Northstar Kickoff Minutes",
+      "expected_excerpt": "# Northstar Kickoff Minutes"
+    },
+    "DOC-002-P02": {
+      "document_id": "DOC-002",
+      "filename": "DOC-002_kickoff_minutes.md",
+      "passage_id": "DOC-002-P02",
+      "section": "Body",
+      "expected_excerpt": "**Document ID:** DOC-002 **Meeting date:** 2026-01-08 **Recorded by:** Jonah Pike **Created:** 2026-01-09 \u00b7 **Version:** 1.0"
+    },
+    "DOC-002-P03": {
+      "document_id": "DOC-002",
+      "filename": "DOC-002_kickoff_minutes.md",
+      "passage_id": "DOC-002-P03",
+      "section": "Discussion",
+      "expected_excerpt": "## Discussion Product, Engineering, Security, and Customer Operations reviewed the limited-cohort plan. The group treated 20 April as a working target, contingent on release readiness. No one described the date as a cust"
+    },
+    "DOC-002-P04": {
+      "document_id": "DOC-002",
+      "filename": "DOC-002_kickoff_minutes.md",
+      "passage_id": "DOC-002-P04",
+      "section": "Body",
+      "expected_excerpt": "Engineering flagged that the production data-store recovery rehearsal would depend on the new backup policy being deployed to the staging environment first. Security asked for a named owner and a recorded approval, rathe"
+    },
+    "DOC-002-P05": {
+      "document_id": "DOC-002",
+      "filename": "DOC-002_kickoff_minutes.md",
+      "passage_id": "DOC-002-P05",
+      "section": "Body",
+      "expected_excerpt": "Customer Operations said its staffing rota could be finalized once the cohort week was stable. The team did not select a specific launch weekday during this meeting."
+    },
+    "DOC-002-P06": {
+      "document_id": "DOC-002",
+      "filename": "DOC-002_kickoff_minutes.md",
+      "passage_id": "DOC-002-P06",
+      "section": "Actions",
+      "expected_excerpt": "## Actions - Dev Malik to draft the backup-policy rollout plan. - Lena Ortiz to propose a release-gate checklist. - Jonah Pike to capture date changes in the decision log."
+    },
+    "DOC-002-P07": {
+      "document_id": "DOC-002",
+      "filename": "DOC-002_kickoff_minutes.md",
+      "passage_id": "DOC-002-P07",
+      "section": "Note",
+      "expected_excerpt": "## Note A comment in the meeting chat said, \u201cIf the rehearsal is clean, April should be fine.\u201d This was an informal expectation, not a gate waiver or approval."
+    },
+    "DOC-003-P01": {
+      "document_id": "DOC-003",
+      "filename": "DOC-003_schedule_decision_february.md",
+      "passage_id": "DOC-003-P01",
+      "section": "Decision Record: Move Northstar Cohort Window",
+      "expected_excerpt": "# Decision Record: Move Northstar Cohort Window"
+    },
+    "DOC-003-P02": {
+      "document_id": "DOC-003",
+      "filename": "DOC-003_schedule_decision_february.md",
+      "passage_id": "DOC-003-P02",
+      "section": "Body",
+      "expected_excerpt": "**Document ID:** DOC-003 **Decision date:** 2026-02-18 **Author:** Mira Sen, VP Product **Version:** 1.0 \u00b7 **Status:** Superseded by DOC-008"
+    },
+    "DOC-003-P03": {
+      "document_id": "DOC-003",
+      "filename": "DOC-003_schedule_decision_february.md",
+      "passage_id": "DOC-003-P03",
+      "section": "Decision",
+      "expected_excerpt": "## Decision Move the limited-cohort target from **20 April to 11 May 2026**. This is a planning change, not authorization to launch on that date regardless of readiness."
+    },
+    "DOC-003-P04": {
+      "document_id": "DOC-003",
+      "filename": "DOC-003_schedule_decision_february.md",
+      "passage_id": "DOC-003-P04",
+      "section": "Rationale",
+      "expected_excerpt": "## Rationale The backup-policy rollout and recovery rehearsal were taking longer than forecast. Support also needed a stable week to complete its rota and customer communications."
+    },
+    "DOC-003-P05": {
+      "document_id": "DOC-003",
+      "filename": "DOC-003_schedule_decision_february.md",
+      "passage_id": "DOC-003-P05",
+      "section": "Conditions unchanged",
+      "expected_excerpt": "## Conditions unchanged The four launch conditions in DOC-001 remain in force. This decision does not waive Security approval or the recovery rehearsal."
+    },
+    "DOC-003-P06": {
+      "document_id": "DOC-003",
+      "filename": "DOC-003_schedule_decision_february.md",
+      "passage_id": "DOC-003-P06",
+      "section": "Follow-up",
+      "expected_excerpt": "## Follow-up Program Management should update planning artifacts. If a later gate decision changes the date again, this record remains the evidence for the February decision only."
+    },
+    "DOC-004-P01": {
+      "document_id": "DOC-004",
+      "filename": "DOC-004_engineering_dependency_update.md",
+      "passage_id": "DOC-004-P01",
+      "section": "Engineering Dependency Update \u2014 Backup and Recovery",
+      "expected_excerpt": "# Engineering Dependency Update \u2014 Backup and Recovery"
+    },
+    "DOC-004-P02": {
+      "document_id": "DOC-004",
+      "filename": "DOC-004_engineering_dependency_update.md",
+      "passage_id": "DOC-004-P02",
+      "section": "Body",
+      "expected_excerpt": "**Document ID:** DOC-004 **Owner:** Dev Malik, Platform Engineering Lead **Created:** 2026-03-06 \u00b7 **Updated:** 2026-03-10 \u00b7 **Version:** 1.2"
+    },
+    "DOC-004-P03": {
+      "document_id": "DOC-004",
+      "filename": "DOC-004_engineering_dependency_update.md",
+      "passage_id": "DOC-004-P03",
+      "section": "Current state",
+      "expected_excerpt": "## Current state The backup-policy configuration reached staging on 5 March. The first recovery rehearsal on 9 March restored the database but failed the team's timing objective: the restore took 74 minutes against a 60-"
+    },
+    "DOC-004-P04": {
+      "document_id": "DOC-004",
+      "filename": "DOC-004_engineering_dependency_update.md",
+      "passage_id": "DOC-004-P04",
+      "section": "Body",
+      "expected_excerpt": "The team has not yet recorded a passing rehearsal. A second rehearsal is planned after the index snapshot change is deployed; no completed result is attached to this report."
+    },
+    "DOC-004-P05": {
+      "document_id": "DOC-004",
+      "filename": "DOC-004_engineering_dependency_update.md",
+      "passage_id": "DOC-004-P05",
+      "section": "Dependency chain",
+      "expected_excerpt": "## Dependency chain 1. Deploy the index snapshot change to staging. 2. Run the recovery rehearsal and record elapsed time plus data-integrity checks. 3. Have Platform Engineering publish the run record. 4. Request Securi"
+    },
+    "DOC-004-P06": {
+      "document_id": "DOC-004",
+      "filename": "DOC-004_engineering_dependency_update.md",
+      "passage_id": "DOC-004-P06",
+      "section": "Body",
+      "expected_excerpt": "A successful rehearsal is evidence for the gate, but it is not itself Security approval."
+    },
+    "DOC-004-P07": {
+      "document_id": "DOC-004",
+      "filename": "DOC-004_engineering_dependency_update.md",
+      "passage_id": "DOC-004-P07",
+      "section": "Clarification",
+      "expected_excerpt": "## Clarification The staging rollout is complete. The production recovery gate is **not** complete as of this update. \u201cBackup policy deployed\u201d must not be interpreted as \u201crecovery approved.\u201d"
+    },
+    "DOC-004-P08": {
+      "document_id": "DOC-004",
+      "filename": "DOC-004_engineering_dependency_update.md",
+      "passage_id": "DOC-004-P08",
+      "section": "Related records",
+      "expected_excerpt": "## Related records DOC-002 records the original dependency. DOC-008 defines the later release gate."
+    },
+    "DOC-005-P01": {
+      "document_id": "DOC-005",
+      "filename": "DOC-005_support_readiness_notes.md",
+      "passage_id": "DOC-005-P01",
+      "section": "Customer Operations Readiness Notes",
+      "expected_excerpt": "# Customer Operations Readiness Notes"
+    },
+    "DOC-005-P02": {
+      "document_id": "DOC-005",
+      "filename": "DOC-005_support_readiness_notes.md",
+      "passage_id": "DOC-005-P02",
+      "section": "Body",
+      "expected_excerpt": "**Document ID:** DOC-005 **Created:** 2026-03-12 \u00b7 **Version:** 1.0 **Author:** Priya Nair, Customer Operations"
+    },
+    "DOC-005-P03": {
+      "document_id": "DOC-005",
+      "filename": "DOC-005_support_readiness_notes.md",
+      "passage_id": "DOC-005-P03",
+      "section": "Body",
+      "expected_excerpt": "Support has drafted the first-cohort rota and prepared a customer-facing FAQ. The rota is not yet frozen because the launch week may move. The FAQ is reviewed internally but has not been approved for external distributio"
+    },
+    "DOC-005-P04": {
+      "document_id": "DOC-005",
+      "filename": "DOC-005_support_readiness_notes.md",
+      "passage_id": "DOC-005-P04",
+      "section": "Body",
+      "expected_excerpt": "During the 11 March sync, one participant wrote, \u201cSupport is ready.\u201d In context, this meant the team had a draft rota and draft FAQ; it did not mean all launch conditions were satisfied."
+    },
+    "DOC-005-P05": {
+      "document_id": "DOC-005",
+      "filename": "DOC-005_support_readiness_notes.md",
+      "passage_id": "DOC-005-P05",
+      "section": "Body",
+      "expected_excerpt": "The team needs a confirmed cohort window before sending invitations. Priya owns the final rota; Lena Ortiz owns the release-gate checklist."
+    },
+    "DOC-005-P06": {
+      "document_id": "DOC-005",
+      "filename": "DOC-005_support_readiness_notes.md",
+      "passage_id": "DOC-005-P06",
+      "section": "Body",
+      "expected_excerpt": "**Open action:** confirm whether a weekday-only escalation rota is sufficient for the final cohort window. No decision is recorded in these notes."
+    },
+    "DOC-006-P01": {
+      "document_id": "DOC-006",
+      "filename": "DOC-006_security_review_thread.txt",
+      "passage_id": "DOC-006-P01",
+      "section": "Body",
+      "expected_excerpt": "DOCUMENT ID: DOC-006 TITLE: Security Review Thread \u2014 Production Configuration THREAD DATES: 2026-03-16 to 2026-03-19 AUTHOR: Lena Ortiz, Security Engineering STATUS: Review in progress"
+    },
+    "DOC-006-P02": {
+      "document_id": "DOC-006",
+      "filename": "DOC-006_security_review_thread.txt",
+      "passage_id": "DOC-006-P02",
+      "section": "Body",
+      "expected_excerpt": "2026-03-16 10:14 \u2014 Lena Ortiz: I have reviewed the staging configuration. The production review remains open because the recovery rehearsal has not passed and the final access-control export is missing."
+    },
+    "DOC-006-P03": {
+      "document_id": "DOC-006",
+      "filename": "DOC-006_security_review_thread.txt",
+      "passage_id": "DOC-006-P03",
+      "section": "Body",
+      "expected_excerpt": "2026-03-18 15:42 \u2014 Dev Malik: The index snapshot change is deployed to staging. We expect to run the rehearsal this week. Please do not treat deployment as approval."
+    },
+    "DOC-006-P04": {
+      "document_id": "DOC-006",
+      "filename": "DOC-006_security_review_thread.txt",
+      "passage_id": "DOC-006-P04",
+      "section": "Body",
+      "expected_excerpt": "2026-03-19 09:05 \u2014 Lena Ortiz: No production approval has been issued in this thread. Once the run record and access-control export are attached, I can complete the review. A verbal \u201clooks good\u201d on the call is not a subs"
+    },
+    "DOC-006-P05": {
+      "document_id": "DOC-006",
+      "filename": "DOC-006_security_review_thread.txt",
+      "passage_id": "DOC-006-P05",
+      "section": "Body",
+      "expected_excerpt": "Related: DOC-004 describes the rehearsal status; DOC-008 later formalizes the launch gate."
+    },
+    "DOC-007-P01": {
+      "document_id": "DOC-007",
+      "filename": "DOC-007_draft_launch_calendar.md",
+      "passage_id": "DOC-007-P01",
+      "section": "Northstar Draft Launch Calendar",
+      "expected_excerpt": "# Northstar Draft Launch Calendar"
+    },
+    "DOC-007-P02": {
+      "document_id": "DOC-007",
+      "filename": "DOC-007_draft_launch_calendar.md",
+      "passage_id": "DOC-007-P02",
+      "section": "Body",
+      "expected_excerpt": "**Document ID:** DOC-007 **Created:** 2026-03-20 \u00b7 **Version:** 0.7 \u00b7 **Status:** Draft \u2014 not approved"
+    },
+    "DOC-007-P03": {
+      "document_id": "DOC-007",
+      "filename": "DOC-007_draft_launch_calendar.md",
+      "passage_id": "DOC-007-P03",
+      "section": "Body",
+      "expected_excerpt": "| Milestone | Draft date | Notes | |---|---|---| | Recovery rehearsal | 25 March | Placeholder pending Engineering confirmation | | Security sign-off | 30 March | Assumes no further findings | | Cohort launch | 11 May | "
+    },
+    "DOC-007-P04": {
+      "document_id": "DOC-007",
+      "filename": "DOC-007_draft_launch_calendar.md",
+      "passage_id": "DOC-007-P04",
+      "section": "Body",
+      "expected_excerpt": "This calendar was assembled for capacity planning. The dates are working assumptions and were not reviewed by the Launch Council. In particular, the 30 March Security line is a placeholder, not evidence that Security has"
+    },
+    "DOC-007-P05": {
+      "document_id": "DOC-007",
+      "filename": "DOC-007_draft_launch_calendar.md",
+      "passage_id": "DOC-007-P05",
+      "section": "Body",
+      "expected_excerpt": "Do not use this draft to infer approval status or to override a signed decision record. The program manager has not yet replaced it with a gate-approved calendar."
+    },
+    "DOC-008-P01": {
+      "document_id": "DOC-008",
+      "filename": "DOC-008_launch_gate_decision.md",
+      "passage_id": "DOC-008-P01",
+      "section": "Launch Council Decision: Northstar Release Gate",
+      "expected_excerpt": "# Launch Council Decision: Northstar Release Gate"
+    },
+    "DOC-008-P02": {
+      "document_id": "DOC-008",
+      "filename": "DOC-008_launch_gate_decision.md",
+      "passage_id": "DOC-008-P02",
+      "section": "Body",
+      "expected_excerpt": "**Document ID:** DOC-008 **Decision date:** 2026-04-02 **Issued by:** Mira Sen, Launch Council Chair **Version:** 1.0 \u00b7 **Status:** Authoritative current decision"
+    },
+    "DOC-008-P03": {
+      "document_id": "DOC-008",
+      "filename": "DOC-008_launch_gate_decision.md",
+      "passage_id": "DOC-008-P03",
+      "section": "Decision",
+      "expected_excerpt": "## Decision The 11 May target in DOC-003 is withdrawn. The limited-cohort launch is moved to a **date to be confirmed after the release gates pass**. No calendar date is currently authorized."
+    },
+    "DOC-008-P04": {
+      "document_id": "DOC-008",
+      "filename": "DOC-008_launch_gate_decision.md",
+      "passage_id": "DOC-008-P04",
+      "section": "Body",
+      "expected_excerpt": "This decision supersedes the schedule target in DOC-003 and any copied date in draft planning artifacts, including DOC-007."
+    },
+    "DOC-008-P05": {
+      "document_id": "DOC-008",
+      "filename": "DOC-008_launch_gate_decision.md",
+      "passage_id": "DOC-008-P05",
+      "section": "Mandatory release gates",
+      "expected_excerpt": "## Mandatory release gates Launch Council will authorize a date only after all of the following are recorded: 1. Product accepts the release candidate. 2. Platform Engineering records a successful recovery rehearsal, inc"
+    },
+    "DOC-008-P06": {
+      "document_id": "DOC-008",
+      "filename": "DOC-008_launch_gate_decision.md",
+      "passage_id": "DOC-008-P06",
+      "section": "Body",
+      "expected_excerpt": "A gate owner saying a task is \u201cnearly done\u201d does not satisfy the gate. All four conditions must be evidenced in the archive."
+    },
+    "DOC-008-P07": {
+      "document_id": "DOC-008",
+      "filename": "DOC-008_launch_gate_decision.md",
+      "passage_id": "DOC-008-P07",
+      "section": "Decision authority",
+      "expected_excerpt": "## Decision authority This record is authoritative for the launch policy and date status. Technical evidence remains governed by the relevant functional records; this decision does not claim that the gates have passed."
+    },
+    "DOC-008-P08": {
+      "document_id": "DOC-008",
+      "filename": "DOC-008_launch_gate_decision.md",
+      "passage_id": "DOC-008-P08",
+      "section": "Review trigger",
+      "expected_excerpt": "## Review trigger Program Management may request a new Launch Council decision only after the four gate records are assembled. Until then, report the launch date as **not yet authorized / to be confirmed**, not 11 May."
+    },
+    "DOC-009-P01": {
+      "document_id": "DOC-009",
+      "filename": "DOC-009_product_acceptance_note.md",
+      "passage_id": "DOC-009-P01",
+      "section": "Release Candidate Review Notes",
+      "expected_excerpt": "# Release Candidate Review Notes"
+    },
+    "DOC-009-P02": {
+      "document_id": "DOC-009",
+      "filename": "DOC-009_product_acceptance_note.md",
+      "passage_id": "DOC-009-P02",
+      "section": "Body",
+      "expected_excerpt": "**Document ID:** DOC-009 **Review date:** 2026-04-04 **Author:** Evan Cho, Product Quality **Version:** 1.0 \u00b7 **Status:** Conditional feedback"
+    },
+    "DOC-009-P03": {
+      "document_id": "DOC-009",
+      "filename": "DOC-009_product_acceptance_note.md",
+      "passage_id": "DOC-009-P03",
+      "section": "Body",
+      "expected_excerpt": "The review build passed the primary workflow walkthrough. Product has accepted the navigation and request-creation flows, but acceptance of the release candidate is **conditional** on resolving the duplicate-notification"
+    },
+    "DOC-009-P04": {
+      "document_id": "DOC-009",
+      "filename": "DOC-009_product_acceptance_note.md",
+      "passage_id": "DOC-009-P04",
+      "section": "Body",
+      "expected_excerpt": "The note \u201cProduct review complete\u201d in the team tracker refers to the walkthrough, not formal release-candidate acceptance. No unconditional acceptance is granted here."
+    },
+    "DOC-009-P05": {
+      "document_id": "DOC-009",
+      "filename": "DOC-009_product_acceptance_note.md",
+      "passage_id": "DOC-009-P05",
+      "section": "Body",
+      "expected_excerpt": "Evan will update this record after a retest. No retest outcome is included in the archive."
+    },
+    "DOC-010-P01": {
+      "document_id": "DOC-010",
+      "filename": "DOC-010_rehearsal_chat_excerpt.txt",
+      "passage_id": "DOC-010-P01",
+      "section": "Body",
+      "expected_excerpt": "DOCUMENT ID: DOC-010 TITLE: Recovery Rehearsal Chat Excerpt DATE: 2026-04-07 AUTHOR: Dev Malik"
+    },
+    "DOC-010-P02": {
+      "document_id": "DOC-010",
+      "filename": "DOC-010_rehearsal_chat_excerpt.txt",
+      "passage_id": "DOC-010-P02",
+      "section": "Body",
+      "expected_excerpt": "09:12 \u2014 Dev: We ran another restore after the index snapshot change. It looked much faster than the March run. 09:18 \u2014 Arun, SRE: I saw the database come back, but I have not checked the integrity report or the final ela"
+    },
+    "DOC-010-P03": {
+      "document_id": "DOC-010",
+      "filename": "DOC-010_rehearsal_chat_excerpt.txt",
+      "passage_id": "DOC-010-P03",
+      "section": "Body",
+      "expected_excerpt": "No final run record, elapsed time, or data-integrity result is attached to this thread. It is evidence that a rehearsal attempt occurred, not evidence that the recovery gate passed."
+    },
+    "DOC-011-P01": {
+      "document_id": "DOC-011",
+      "filename": "DOC-011_access_export_request.md",
+      "passage_id": "DOC-011-P01",
+      "section": "Outstanding Security Evidence Request",
+      "expected_excerpt": "# Outstanding Security Evidence Request"
+    },
+    "DOC-011-P02": {
+      "document_id": "DOC-011",
+      "filename": "DOC-011_access_export_request.md",
+      "passage_id": "DOC-011-P02",
+      "section": "Body",
+      "expected_excerpt": "**Document ID:** DOC-011 **Created:** 2026-04-08 \u00b7 **Version:** 1.0 **Owner:** Lena Ortiz, Security Engineering"
+    },
+    "DOC-011-P03": {
+      "document_id": "DOC-011",
+      "filename": "DOC-011_access_export_request.md",
+      "passage_id": "DOC-011-P03",
+      "section": "Body",
+      "expected_excerpt": "Security still needs two artifacts before it can finish the production review: - the final recovery rehearsal run record, including integrity checks and elapsed time; - the final production access-control export."
+    },
+    "DOC-011-P04": {
+      "document_id": "DOC-011",
+      "filename": "DOC-011_access_export_request.md",
+      "passage_id": "DOC-011-P04",
+      "section": "Body",
+      "expected_excerpt": "The access-control export requested from Identity Operations has not been attached or acknowledged in the archive. This document does not establish whether the export exists elsewhere; it establishes only that Security h"
+    },
+    "DOC-011-P05": {
+      "document_id": "DOC-011",
+      "filename": "DOC-011_access_export_request.md",
+      "passage_id": "DOC-011-P05",
+      "section": "Body",
+      "expected_excerpt": "No production approval is recorded. A date cannot be authorized on the strength of a planned review."
+    },
+    "DOC-012-P01": {
+      "document_id": "DOC-012",
+      "filename": "DOC-012_launch_status_digest.md",
+      "passage_id": "DOC-012-P01",
+      "section": "Northstar Status Digest",
+      "expected_excerpt": "# Northstar Status Digest"
+    },
+    "DOC-012-P02": {
+      "document_id": "DOC-012",
+      "filename": "DOC-012_launch_status_digest.md",
+      "passage_id": "DOC-012-P02",
+      "section": "Body",
+      "expected_excerpt": "**Document ID:** DOC-012 **Created:** 2026-04-09 \u00b7 **Version:** 1.0 **Author:** Jonah Pike, Program Manager"
+    },
+    "DOC-012-P03": {
+      "document_id": "DOC-012",
+      "filename": "DOC-012_launch_status_digest.md",
+      "passage_id": "DOC-012-P03",
+      "section": "Body",
+      "expected_excerpt": "The team has made progress on all four workstreams. Product feedback is being addressed, Engineering has run a second restore attempt, Security is waiting on artifacts, and Customer Operations has drafted its materials."
+    },
+    "DOC-012-P04": {
+      "document_id": "DOC-012",
+      "filename": "DOC-012_launch_status_digest.md",
+      "passage_id": "DOC-012-P04",
+      "section": "Body",
+      "expected_excerpt": "For the weekly leadership slide, I wrote \u201cMay launch remains possible.\u201d That phrase describes a possibility, not an approved date. After DOC-008, the team has no authorized launch date. The 11 May date still appears in o"
+    },
+    "DOC-012-P05": {
+      "document_id": "DOC-012",
+      "filename": "DOC-012_launch_status_digest.md",
+      "passage_id": "DOC-012-P05",
+      "section": "Body",
+      "expected_excerpt": "I have not received a final Product acceptance, a complete recovery run record, Security production approval, or confirmation that the FAQ is approved for external distribution and the rota is frozen. The next useful ste"
+    }
+  }
+}
