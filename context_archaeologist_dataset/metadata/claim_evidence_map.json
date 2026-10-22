@@ -95,7 +95,7 @@
         "DOC-012"
       ],
       "supporting_passage_ids": [
-        "DOC-006-P05",
+        "DOC-006-P04",
         "DOC-011-P04",
         "DOC-012-P04"
       ],
@@ -105,7 +105,7 @@
       "authority_temporal_notes": "DOC-007's 30 March sign-off is a draft placeholder and not approval evidence.",
       "status": "established_current",
       "expected_conclusion": "Production Security approval is not recorded.",
-      "evidence_needed": "Security thread and outstanding evidence request; classify calendar line as placeholder."
+      "evidence_needed": "DOC-006-P04 (Lena: 'No production approval has been issued') plus DOC-011-P04 and DOC-012-P04."
     },
     {
       "claim_id": "CL-006",
@@ -136,14 +136,14 @@
         "DOC-011"
       ],
       "supporting_passage_ids": [
-        "DOC-006-P03",
+        "DOC-006-P02",
         "DOC-011-P03"
       ],
       "contradicting_document_ids": [],
       "authority_temporal_notes": "Evidence of non-receipt in the review record is not proof that no export exists anywhere.",
       "status": "established_missing_from_archive",
       "expected_conclusion": "Security has not received the export in the reviewed archive; broader existence cannot be concluded.",
-      "evidence_needed": "Explicit request and review thread."
+      "evidence_needed": "DOC-006-P02 (Lena: export missing, production review open) and DOC-011-P03 (outstanding evidence request)."
     },
     {
       "claim_id": "CL-008",
