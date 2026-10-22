@@ -8,11 +8,23 @@ import urllib.error
 from typing import Any, Dict, List, Optional
 
 
+import os
+
 class OllamaClient:
-    def __init__(self, model_name: str = "llama3:latest", base_url: str = "http://localhost:11434"):
+    def __init__(
+        self,
+        model_name: str = "llama3:latest",
+        base_url: str = "http://localhost:11434",
+        default_timeout: Optional[int] = None,
+    ):
         self.model_name = model_name
         self.base_url = base_url.rstrip("/")
         self._is_available: Optional[bool] = None
+        # Allow configuration via argument or OLLAMA_TIMEOUT env var, defaulting to 120s
+        if default_timeout is not None:
+            self.default_timeout = default_timeout
+        else:
+            self.default_timeout = int(os.environ.get("OLLAMA_TIMEOUT", "120"))
 
     def is_available(self) -> bool:
         if self._is_available is not None:
@@ -28,8 +40,9 @@ class OllamaClient:
             self._is_available = False
             return False
 
-    def generate(self, prompt: str, system: Optional[str] = None, timeout: int = 45) -> str:
+    def generate(self, prompt: str, system: Optional[str] = None, timeout: Optional[int] = None) -> str:
         """Call Ollama's generate API synchronously with timeout."""
+        eff_timeout = timeout if timeout is not None else self.default_timeout
         payload: Dict[str, Any] = {
             "model": self.model_name,
             "prompt": prompt,
@@ -48,11 +61,17 @@ class OllamaClient:
             data=data_bytes,
             headers={"Content-Type": "application/json"},
         )
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            resp_data = json.loads(resp.read().decode("utf-8"))
-            return resp_data.get("response", "").strip()
+        try:
+            with urllib.request.urlopen(req, timeout=eff_timeout) as resp:
+                resp_data = json.loads(resp.read().decode("utf-8"))
+                return resp_data.get("response", "").strip()
+        except (TimeoutError, urllib.error.URLError) as exc:
+            raise TimeoutError(
+                f"Ollama request to '{self.model_name}' timed out after {eff_timeout}s. "
+                "Local inference may require more time or GPU acceleration."
+            ) from exc
 
-    def generate_json(self, prompt: str, system: Optional[str] = None, timeout: int = 45) -> Dict[str, Any]:
+    def generate_json(self, prompt: str, system: Optional[str] = None, timeout: Optional[int] = None) -> Dict[str, Any]:
         """Generate response formatted as JSON."""
         full_system = (system or "") + "\nRESPOND IN STRICT VALID JSON ONLY. NO MARKDOWN CODE BLOCKS."
         raw = self.generate(prompt=prompt, system=full_system, timeout=timeout)
