@@ -1,0 +1,6 @@
+# Context Archaeologist dependencies
+streamlit>=1.40.0
+pandas>=2.2.0
+langgraph>=0.2.0
+rapidfuzz>=3.9.0
+pytest>=8.0.0
